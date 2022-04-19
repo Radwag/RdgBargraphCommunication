@@ -14,6 +14,16 @@ After entering the serial port name, you can manage the bargraph via json protoc
 
 ![image](https://user-images.githubusercontent.com/46632727/163962079-819b59f2-702f-4afe-a55c-84cdba7da530.png)
 
+# Command structure
+
+![image](https://user-images.githubusercontent.com/46632727/163963048-c0aed0c2-fca9-47da-8b66-adae1f3073fa.png)
+* Content - object with all settings necessary to manage bargraph device.
+  * Address - Address of device (default 255)
+  * IsRequest - 
+  * Power - power of luminous segments
+  * Red - a table containing the states of individual bargraph (Red)segments
+  * Green - a table containing the states of individual bargraph (Green)segments
+* Crc - 8bit CRC
 
 # Commands
 * Set all red segments light on with power of light 70%
