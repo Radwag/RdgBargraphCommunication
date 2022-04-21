@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO.Ports;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -94,6 +95,7 @@ namespace Services
                 _serialPort.ReadTimeout = timeout;
                 _serialPort.WriteTimeout = 1000;
                 _serialPort.Write(message);
+                Debug.WriteLine("Send: "+message);
                 try
                 {
                     Thread.Sleep(80);

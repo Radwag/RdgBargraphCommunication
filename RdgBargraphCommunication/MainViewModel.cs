@@ -45,7 +45,7 @@ namespace RdgBargraphCommunication
             {
                 _commandBindingCollection.Clear();
                 _commandBindingCollection.Add(new CommandBinding(ConnectCommand, OnConnectCommandExecuted));
-                _commandBindingCollection.Add(new CommandBinding(SetPowerCommand, OnSetPowerCommandExecuted));
+                _commandBindingCollection.Add(new CommandBinding(SendQueryCommand, OnSendQueryCommandExecuted));
                 return _commandBindingCollection;
             }
         }
@@ -65,29 +65,14 @@ namespace RdgBargraphCommunication
             }
         }
 
-        public RoutedUICommand SetPowerCommand { get; set; } =
-            new RoutedUICommand("SetPower", "SetPowerCommand", typeof(MainWindow));
+        public RoutedUICommand SendQueryCommand { get; set; } =
+            new RoutedUICommand("SendQuery", "SendQueryCommand", typeof(MainWindow));
 
-        void OnSetPowerCommandExecuted(object sender, ExecutedRoutedEventArgs eventArgs)
+        void OnSendQueryCommandExecuted(object sender, ExecutedRoutedEventArgs eventArgs)
         {
             BargraphEngine.SetBargraphSettings();
         }
-
-        /// <summary>
-        /// constructor of MainViewModel
-        /// </summary>
-        public MainViewModel()
-        {
-            BargraphEngine.QueryModel.Content.Green.CollectionChanged += (sender, args) =>
-            {
-                BargraphEngine.SetBargraphSettings();
-            };
-            BargraphEngine.QueryModel.Content.Red.CollectionChanged += (sender, args) =>
-            {
-                BargraphEngine.SetBargraphSettings();
-            };
-        }
-
+        
         /// <summary>
         /// PropertyChangedEventHandler
         /// </summary>

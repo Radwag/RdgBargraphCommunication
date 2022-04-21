@@ -315,7 +315,9 @@
                     IsEnabled="{Binding BargraphEngine.Sender, Converter={StaticResource NullToBoolConverter}}">
             <TextBlock Text="Power:  " Foreground="White"></TextBlock>
             <Slider Value="{Binding BargraphEngine.QueryModel.Content.Power}" Maximum="100" Minimum="0" Width="500"></Slider>
-            <Button Content="Set power" Command="{Binding SetPowerCommand}" Height="20"></Button>
-        </StackPanel>
+           <StackPanel Orientation="Vertical">
+               <Button Content="Send command" Command="{Binding SendQueryCommand}" Height="50" Width="200" Margin="50"></Button>
+           </StackPanel>
+            </StackPanel>
     </Grid>
 </Window>

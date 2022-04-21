@@ -1,4 +1,5 @@
 using System.IO.Ports;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Services.BargraphDataModel;
@@ -41,7 +42,7 @@ namespace Services
         {
             return Task.Factory.StartNew(() =>
             {
-                using (Sender = new RS232Sender(serialPortName, 9600, Parity.None))
+                using (Sender = new RS232Sender(serialPortName, 115200, Parity.None, Encoding.UTF8, 2000, true))
                 {
                     Sender.Connect();
                 }
