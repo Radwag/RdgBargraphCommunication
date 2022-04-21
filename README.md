@@ -12,7 +12,7 @@ Project was written in Net Framework v4.8 with WPF, Project using System.Text.Js
 # Working description
 After entering the serial port name, you can manage the bargraph via json protocol.
 
-![image](https://user-images.githubusercontent.com/46632727/163962079-819b59f2-702f-4afe-a55c-84cdba7da530.png)
+![image](https://user-images.githubusercontent.com/46632727/164443893-278c782f-5ad5-4cb5-a8b0-4e51516a39f7.png)
 
 # Command structure
 
